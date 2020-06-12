@@ -1,0 +1,84 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "KEY": 1,
+        "NAME": "Maroubra Beach",
+        "DESCRIPTION": "Flat asphalt surface, 5 components",
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.257187,
+          -33.948533
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "KEY": 2,
+        "NAME": "Manly Beach",
+        "DESCRIPTION": "Flat asphalt surface, 5 components",
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.287693,
+          -33.792823
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "KEY": 3,
+        "NAME": "Cronulla Beach",
+        "DESCRIPTION": "Flat asphalt surface, 5 components",
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.150060,
+          -34.055584
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "KEY": 4,
+        "NAME": "Coogee Beach",
+        "DESCRIPTION": "Flat asphalt surface, 5 components",
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.258137,
+          -33.920271
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "KEY": 5,
+        "NAME": "Bondi Beach",
+        "DESCRIPTION": "Flat asphalt surface, 5 components",
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          151.276694,
+          -33.891334
+        ]
+      }
+    }
+  ]
+}
