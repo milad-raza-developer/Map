@@ -6,7 +6,10 @@
         "KEY": 1,
         "NAME": "Maroubra Beach",
         "DESCRIPTION": "Flat asphalt surface, 5 components",
-        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg",
+        "ZOOM": 15,
+        "DEFAULTZOOM": 11,
+        "DEFAULT": true
       },
       "geometry": {
         "type": "Point",
@@ -22,7 +25,10 @@
         "KEY": 2,
         "NAME": "Manly Beach",
         "DESCRIPTION": "Flat asphalt surface, 5 components",
-        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg",
+        "ZOOM": 15,
+        "DEFAULTZOOM": 11,
+        "DEFAULT": false
       },
       "geometry": {
         "type": "Point",
@@ -38,13 +44,16 @@
         "KEY": 3,
         "NAME": "Cronulla Beach",
         "DESCRIPTION": "Flat asphalt surface, 5 components",
-        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg",
+        "ZOOM": 15,
+        "DEFAULTZOOM": 11,
+        "DEFAULT": false
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          151.150060,
-          -34.055584
+          151.150145,
+          -34.055735
         ]
       }
     },
@@ -54,7 +63,10 @@
         "KEY": 4,
         "NAME": "Coogee Beach",
         "DESCRIPTION": "Flat asphalt surface, 5 components",
-        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg",
+        "ZOOM": 15,
+        "DEFAULTZOOM": 11,
+        "DEFAULT": false
       },
       "geometry": {
         "type": "Point",
@@ -70,7 +82,10 @@
         "KEY": 5,
         "NAME": "Bondi Beach",
         "DESCRIPTION": "Flat asphalt surface, 5 components",
-        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg"
+        "PICTURE": "https://veebrant.com/wp-content/uploads/2013/06/streetview-spain.jpg",
+        "ZOOM": 15,
+        "DEFAULTZOOM": 11,
+        "DEFAULT": false
       },
       "geometry": {
         "type": "Point",

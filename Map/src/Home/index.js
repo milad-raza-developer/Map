@@ -1,24 +1,31 @@
 import React, { useState } from 'react';
 import * as ResturantData from "../Data/Resturants.json";
-import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "react-google-maps";
-import './style.css'
+import { GoogleMap, withScriptjs, withGoogleMap, Marker } from "react-google-maps";
+import Media from 'react-media';
+import './style.css';
+import Gif from '../images/animation.gif'
 
 function Map() {
-  const [selectedResturant, setSelectedResturant] = useState(null);
+  const [selectedResturant, setSelectedResturant] = useState(ResturantData.features[0]);
+  const [selectedZoom, setSelectedZoom] = useState(11.5);
+  const [selectedMarker, setSelectedMarker] = useState({ lat: ResturantData.features[0].geometry.coordinates[1], lng: ResturantData.features[0].geometry.coordinates[0] })
   return (
     <GoogleMap
-      defaultZoom={11}
-      defaultCenter={{ lat: -33.948533, lng: 151.257187 }}
+
+      zoom={selectedZoom}
+      center={selectedMarker}
+      mapTypeId={'satellite'}
     >
       {ResturantData.features.map(resturant => (
         <Marker
-          key={resturant.properties.KEY}
           position={{
             lat: resturant.geometry.coordinates[1],
             lng: resturant.geometry.coordinates[0]
           }}
           onClick={() => {
             setSelectedResturant(resturant)
+            setSelectedZoom(15)
+            setSelectedMarker({ lat: resturant.geometry.coordinates[1], lng: resturant.geometry.coordinates[0] })
 
           }}
           icon={{
@@ -28,14 +35,42 @@ function Map() {
         />
       ))}
       {selectedResturant && (
-        <div className="rightPannel">
-          <div className="banner">
-            <span className="banner-heading">{selectedResturant.properties.NAME}</span>
-            <span className="bar"></span>
-            <span><img src={selectedResturant.properties.PICTURE} alt="Resturant Image" style={{ width: '100%', height: '400px' }} /></span>
-          </div>
-        </div>
-        
+        <Media query={{ maxWidth: 1100 }}>
+          {matches =>
+            matches ? (
+              <div className="mdq-rightpannel">
+                <div className="mdq-banner">
+                    <span className="mdq-banner-heading">{selectedResturant.properties.NAME}</span>
+                    <button className="mdq-banner-btn" id="allRestBtn" onClick={() => {
+                      setSelectedZoom(11.5);
+                      setSelectedMarker({ lat: ResturantData.features[0].geometry.coordinates[1], lng: ResturantData.features[0].geometry.coordinates[0] })
+                    }}>
+                      All Resturants
+                    </button>
+                  <span className="bar"></span>
+                  <span><img src={selectedResturant.properties.PICTURE} alt="Resturant Image" style={{ width: '100%', height: '400px' }} /></span>
+                </div>
+              </div>
+            ) : (
+                <div className="rightPannel">
+                  <div className="banner">
+                    <span className="banner-heading">{selectedResturant.properties.NAME}</span>
+                    <span className="bar"></span>
+                    <span><img src={selectedResturant.properties.PICTURE} alt="Resturant Image" style={{ width: '100%', height: '400px' }} /></span>
+                    <button className="banner-btn" id="allRestBtn" onClick={() => {
+                      setSelectedZoom(11.5);
+                      setSelectedMarker({ lat: ResturantData.features[0].geometry.coordinates[1], lng: ResturantData.features[0].geometry.coordinates[0] })
+
+                    }}>
+                      Show All Resturants
+              </button>
+                  </div>
+                </div>
+              )
+          }
+        </Media>
+
+
       )}
     </GoogleMap>
   );
@@ -50,17 +85,23 @@ export default class Home extends React.Component {
   componentDidMount = () => {
     localStorage.setItem("key", 1)
 
+    if ("geolocation" in navigator) {
+      console.log("Available");
+    } else {
+      console.log("Not Available");
+    }
+
     setTimeout(() => {
       this.setState({ done: true })
-    }, 1200);
+    }, 7000);
 
   }
   render() {
     return (
       <div className="wrapper">
-        <div id="map" style={{ width: "100%", height: "100vh" }}>
+        <div id="map" style={{ width: "100%", height: "100vh", backgroundRepeat: "no-repeat" }}>
           {!this.state.done ? (
-            <div className="loader"></div>
+            <div><img src={Gif} alt={"not running"} className="gif"/></div>
           ) : (
               <WrappedMap
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyB41MGf9yFFTie-f-Liwg6-_IuVVX9BeKg`}
@@ -74,3 +115,4 @@ export default class Home extends React.Component {
     )
   }
 }
+

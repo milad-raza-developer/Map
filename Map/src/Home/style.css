@@ -10,21 +10,41 @@ html{
 }
 
 .wrapper{
-  background-color: blue;
-  width: 100%;
   height: 100vh;
 }
 
 .rightPannel{
-  
-  display: flex;
-  flex-direction: column;
   z-index: 100;
   animation: transitionIn 20s;
   position: absolute;
   top: 9%;
   left: 75%;
   margin: auto;
+}
+
+.mdq-rightpannel{
+  z-index: 100;
+  animation: transitionIn 20s;
+  position: absolute;
+  top: 89%;
+  margin: auto;
+  width: 100%;
+}
+
+.mdq-banner{
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .banner{
@@ -48,6 +68,25 @@ html{
   margin-top: 15px;
   text-indent: 20px;
 }
+.mdq-banner-heading{
+  font-size: 25px;
+  display: flex;
+  margin: auto;
+  font-weight: bolder;
+}
+
+.mdq-banner-btn{
+  /* display: flex; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 50px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+}
 
 .bar{
   border: 1px solid rgb(247, 247, 247);
@@ -70,12 +109,6 @@ html{
 
 }
 
-@keyframes spin{
-  100%{transform: rotate(360deg);
-    filter:hue-rotate(160deg)
-  }
-}
-
 @keyframes transitionIn {
   0%{
     opacity: 0;
@@ -96,3 +129,25 @@ html{
     opacity: 1;
   }
 };
+
+
+.dboxmap{
+  width: "100%";
+ height: "100vh";
+}
+
+.banner-btn{
+  margin-top: 30px;
+  height: 35px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.gif{
+  width: 100%;
+  height: 100vh;
+}

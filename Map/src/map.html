@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <span>Time:</span><span id="time"></span>
+  </div>
+</body>
+
+<script>
+  var time = new Date();
+  var hours = time.getHours()
+  var minutes = time.getMinutes()
+  var zoom = time.getSeconds()
+  document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + zoom
+
+  var zoomInterval = setInterval(function () {
+    zoom += 1
+    console.log(zoom)
+    document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + zoom
+   if(zoom === 11) {
+    clearInterval(zoomInterval)
+  }
+  }, 1000)
+
+  var zoomInterval = setInterval(function () {
+    selectedZoom = setSelectedZoom(selectedZoom+1)
+    console.log(zoom)
+   if(zoom === 11) {
+    clearInterval(zoomInterval)
+  }
+  }, 1000)
+</script>
+
+</html>
